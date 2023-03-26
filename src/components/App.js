@@ -9,8 +9,8 @@ function App() {
 
   <Route path="/login" component={Login} />
   <Route path="/signup" component={SignUp} />
-  <Redirect from="/" to="/login" />
-  <Route path="/" component={Todo} />
+  {/* <Redirect from="/" to="/login" /> */}
+  <Route path="/todo" component={Todo} />
 
 </Switch>
 

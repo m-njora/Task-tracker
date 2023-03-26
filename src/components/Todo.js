@@ -2,40 +2,36 @@ import React, {useState} from 'react'
 
 
 function Todo() {
-//     const [Todos, setTodos] = useState([]);
-//     const [newTodo, setNewTodo] = useState('');
-//     const [editingIndex, setEditingIndex] = useState(null);
-//     const MAX_Todos = 10;
-//     const handleNewTodoChange = (event) => {
-//       setNewTodo(event.target.value);
-//     };
-//     const handleAddTodo = (event) => {
-//         event.preventDefault();
-//         if (editingIndex === null) {
-//           if (Todos.length < MAX_Todos) {
-//             setTodos([...Todos, newTodo]);
-//             setNewTodo('');
-//           } else {
-//             alert(`You can't add more than ${MAX_Todos} Todos`);
-//           }
-//         } else {
-//           const newTodos = [...Todos];
-//           newTodos[editingIndex] = newTodo;
-//           setTodos(newTodos);
-//           setNewTodo('');
-//           setEditingIndex(null);
-//         }
-//       };
+    // const [Todos, setTodos] = useState([]);
+    // const [newTodo, setNewTodo] = useState('');
+    // const [editingIndex, setEditingIndex] = useState(null);
+    // const handleNewTodoChange = (event) => {
+    //   setNewTodo(event.target.value);
+    // };
+    // const handleAddTodo = (event) => {
+    //     event.preventDefault();
+    //     if (editingIndex === null) {
+    //         setTodos([...Todos, newTodo]);
+    //         setNewTodo('');
+      
+    //     } else {
+    //       const newTodos = [...Todos];
+    //       newTodos[editingIndex] = newTodo;
+    //       setTodos(newTodos);
+    //       setNewTodo('');
+    //       setEditingIndex(null);
+    //     }
+    //   };
     
-//       const handleEditTodo = (TodoIndex) => {
-//         setNewTodo(Todos[TodoIndex]);
-//         setEditingIndex(TodoIndex);
-//       };
+    //   const handleEditTodo = (TodoIndex) => {
+    //     setNewTodo(Todos[TodoIndex]);
+    //     setEditingIndex(TodoIndex);
+    //   };
     
-//       const handleDeleteTodo = (TodoIndex) => {
-//         setTodos(Todos.filter((_, index) => index !== TodoIndex));
-//         setEditingIndex(null);
-//       };
+    //   const handleDeleteTodo = (TodoIndex) => {
+    //     setTodos(Todos.filter((_, index) => index !== TodoIndex));
+    //     setEditingIndex(null);
+    //   };
     
     return (
         <div className='form'>
