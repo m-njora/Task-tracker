@@ -2,26 +2,26 @@ import React, {useState} from 'react'
 
 
 function Todo() {
-    // const [Todos, setTodos] = useState([]);
-    // const [newTodo, setNewTodo] = useState('');
+    const [Todos, setTodos] = useState([]);
+    const [newTodo, setNewTodo] = useState('');
     // const [editingIndex, setEditingIndex] = useState(null);
     // const handleNewTodoChange = (event) => {
     //   setNewTodo(event.target.value);
     // };
-    // const handleAddTodo = (event) => {
-    //     event.preventDefault();
-    //     if (editingIndex === null) {
-    //         setTodos([...Todos, newTodo]);
-    //         setNewTodo('');
+    const handleAddTodo = (event) => {
+        event.preventDefault();
+        if (editingIndex === null) {
+            setTodos([...Todos, newTodo]);
+            setNewTodo('');
       
-    //     } else {
-    //       const newTodos = [...Todos];
-    //       newTodos[editingIndex] = newTodo;
-    //       setTodos(newTodos);
-    //       setNewTodo('');
-    //       setEditingIndex(null);
-    //     }
-    //   };
+        } else {
+          const newTodos = [...Todos];
+          newTodos[editingIndex] = newTodo;
+          setTodos(newTodos);
+          setNewTodo('');
+          setEditingIndex(null);
+        }
+      };
     
     //   const handleEditTodo = (TodoIndex) => {
     //     setNewTodo(Todos[TodoIndex]);
