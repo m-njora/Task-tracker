@@ -42,11 +42,11 @@
     box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   
-  .input-icon {
+  /* .input-icon {
     height: 1.3em;
     width: 1.3em;
     fill: white;
-  }
+  } */
   
   .input-field {
     background: none;
