@@ -4,10 +4,10 @@ import React, {useState} from 'react'
 function Todo() {
     const [Todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState('');
-    // const [editingIndex, setEditingIndex] = useState(null);
-    // const handleNewTodoChange = (event) => {
-    //   setNewTodo(event.target.value);
-    // };
+    const [editingIndex, setEditingIndex] = useState(null);
+    const handleNewTodoChange = (event) => {
+      setNewTodo(event.target.value);
+    };
     const handleAddTodo = (event) => {
         event.preventDefault();
         if (editingIndex === null) {
@@ -23,15 +23,15 @@ function Todo() {
         }
       };
     
-    //   const handleEditTodo = (TodoIndex) => {
-    //     setNewTodo(Todos[TodoIndex]);
-    //     setEditingIndex(TodoIndex);
-    //   };
+      const handleEditTodo = (TodoIndex) => {
+        setNewTodo(Todos[TodoIndex]);
+        setEditingIndex(TodoIndex);
+      };
     
-    //   const handleDeleteTodo = (TodoIndex) => {
-    //     setTodos(Todos.filter((_, index) => index !== TodoIndex));
-    //     setEditingIndex(null);
-    //   };
+      const handleDeleteTodo = (TodoIndex) => {
+        setTodos(Todos.filter((_, index) => index !== TodoIndex));
+        setEditingIndex(null);
+      };
     
     return (
         <div className='form'>
