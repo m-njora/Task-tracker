@@ -13,7 +13,7 @@ function Todo() {
     const handleAddTodo = async (event) => {
         event.preventDefault();
         if (editingIndex === null) {
-        const response = await fetch('http://localhost:3000/todos', {
+        const response = await fetch('https://task-rails.onrender.com/todos/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,8 +36,8 @@ function Todo() {
     
       const handleEditTodo = async (todoIndex) => {
         // PUT request to the server
-        const todoToUpdate = Todos[todoIndex];
-        const response = await fetch(`http://localhost:3000/todos/${todoToUpdate.id}`, {
+        const todoUpdate = Todos[todoIndex];
+        const response = await fetch(`http://localhost:3000/todos/${todoUpdate.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -58,11 +58,11 @@ function Todo() {
       };
     
       const handleDeleteTodo = async (todoIndex) => {
-        const todoToDelete = Todos[todoIndex];
+        const todoDelete = Todos[todoIndex];
 
         // delete a todo (delete method)
 
-        const response = await fetch(`http://localhost:3000/todos/${todoToDelete.id}`, {
+        const response = await fetch(`https://task-rails.onrender.com/todos/${todo.id}`, {
         method: 'DELETE'
         });
         if (response.ok) {

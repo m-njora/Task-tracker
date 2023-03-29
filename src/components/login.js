@@ -11,63 +11,67 @@ function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
 
 
-      fetch("https://portfolio-back-end-f9we.onrender.com/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-        }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(response.status);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Handle successful registration
-          console.log(data);
-          setLoggedIn(true);
-        })
-        .catch((error) => {
-          // Handle registration error
-          console.error(error);
-        });
-    
-  }
-  const handleLogin = (event) => {
-    event.preventDefault();
-
-    fetch("https://portfolio-back-end-f9we.onrender.com/auth/login", {
+    fetch("https://task-rails.onrender.com/users/register", {
       method: "POST",
+      crossorigin: true,
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle successful login
-        console.log(data);
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      
       })
-      .catch((error) => {
-        // Handle login error
-        console.error(error);
-      });
-      setLoggedIn(true);
-  };
+    }).then((response) => response.json())
+    .then((data) => {
+      // Handle successful login
+      
+      console.log(data);
+    })
+    .catch((error) => {
+      // Handle login error
+      console.error(error);
+    });
+   setRegistered(true)
+
+};
+const handleLogin = (event) => {
+    event.preventDefault();
+
+    fetch("https://task-rails.onrender.com/users/login", {
+      method: "POST",
+      crossorigin: true,
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+       email, password,
+      })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle successful login
+      
+      console.log(data);
+    })
+    .catch((error) => {
+      // Handle login error
+      console.error(error);
+    });
+    setLoggedIn(true);
+};
 
     return(
       <div className="login">
         <Components.Container>
-                {loggedIn && <Redirect to="/profile" />}
+                {loggedIn && <Redirect to="/todo" />}
 
             <Components.SignUpContainer signinIn={signIn}>
                 <Components.Form>
